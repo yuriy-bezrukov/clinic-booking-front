@@ -1,0 +1,46 @@
+@mixin pseudo () {
+  position: absolute;
+  display: block;
+  content: "";
+}
+
+@mixin circle($diametr) {
+  border-radius: 50%;
+  width: $diametr;
+  height: $diametr;
+}
+
+@mixin wrapper1280() {
+  display: block;
+  max-width: 1280px;
+  padding: 56px 20px 120px 20px;
+  margin: 0 auto;
+
+  @include phone() {
+    padding: 18px 14px 58px 14px;
+  }
+}
+
+@mixin phone() {
+  @media (max-width: 700px) {
+    @content;
+  }
+}
+
+
+
+// @mixin size($size) {
+
+//   @if $size==tablet {
+//       @media (min-width: 960px) {
+//           @content;
+//       }
+//   }
+
+//   @else if $size==phone {
+//       @media (min-width: 700px) {
+//           @content;
+//       }
+//   }
+
+// }

@@ -1,0 +1,27 @@
+@import "./assets/styles/reset.scss";
+@import "./assets/styles/fonts.scss";
+@import "./assets/styles/default.scss";
+
+html, body { height: 100%; }
+
+mat-dialog-container {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 900;
+}
