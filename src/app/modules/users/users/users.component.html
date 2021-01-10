@@ -1,1 +1,8 @@
-<p>users works!</p>
+<div class="users">
+  <app-user *ngFor="let user of users$ | async" [user]="user" class="item"></app-user>
+  <preloader *ngIf="preloader$ | async"></preloader>
+</div>
+
+<div class="users add-user">
+  <app-user></app-user>
+</div>

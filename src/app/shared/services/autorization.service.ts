@@ -5,21 +5,7 @@ import { of } from 'rxjs';
 import { catchError, map, mergeMap, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ROUTINGS } from '../../app-routing.module';
-
-
-export enum UserRole {
-  admin = 1,
-  user = 2,
-  unresolve = 3
-}
-
-interface User {
-  _id: string;
-  username: string;
-  password: string;
-  role: UserRole;
-  email: string;
-}
+import { User, UserRole } from '@shared/models/User';
 
 const storageToken = 'storageToken';
 
@@ -72,7 +58,7 @@ export class AutorizationService {
   signUp(name: string, email: string, password: string, role: 'client') {
     return this.http.post<{ status: 'error' | 'success', message: string, userId: string }>(environment.api + 'signup', { name, email, password, role })
       .pipe(catchError(res => {
-        return of(res)
+        return of(res);
       }));
   }
 
@@ -92,10 +78,9 @@ export class AutorizationService {
       }),
       tap(res => {
         if (res?.email) {
-          res.role = Number.parseInt(res.role);
           this.user = res;
           return;
         }
-      }))
+      }));
   }
 }

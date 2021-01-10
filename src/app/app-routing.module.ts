@@ -6,7 +6,8 @@ export const ROUTINGS = {
   authorization: 'authorization',
   main: 'main',
   users: 'users',
-}
+  calendar: 'calendar'
+};
 
 const routes: Routes = [
   { path: ROUTINGS.authorization, loadChildren: () => import('./modules/authorization/authorization.module').then(m => m.AuthorizationModule) },
@@ -14,6 +15,11 @@ const routes: Routes = [
     path: ROUTINGS.main,
     canActivate: [AuthorizationGuard],
     loadChildren: () => import('./modules/panel/panel.module').then(m => m.PanelModule),
+  },
+  {
+    path: ROUTINGS.calendar,
+    canActivate: [AuthorizationGuard],
+    loadChildren: () => import('./modules/calendar/calendar.module').then(m => m.CalendarModule),
   },
   {
     path: ROUTINGS.users,
@@ -27,7 +33,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(
     routes,
-    { enableTracing: true } // <-- debugging purposes only
+    // { enableTracing: true } // <-- debugging purposes only
   )],
   exports: [RouterModule]
 })

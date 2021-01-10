@@ -14,6 +14,6 @@ import { PreloaderComponent } from '@shared-modules/preloader/preloader.componen
   providers: [
     AutorizationService,
   ],
-  exports:[PreloaderComponent]
+  exports: [PreloaderComponent]
 })
 export class SharedModule { }

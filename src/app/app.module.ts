@@ -12,6 +12,7 @@ import { NG_ENTITY_SERVICE_CONFIG } from '@datorama/akita-ng-entity-service';
 import { NgModule } from '@angular/core';
 import { CoreProvidedInterceptors } from '@shared/interceptors';
 import { MenuModule } from '@shared-modules/menu/menu.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MenuModule } from '@shared-modules/menu/menu.module';
     AkitaNgRouterStoreModule.forRoot(),
     HttpClientModule,
     BrowserAnimationsModule,
-    MenuModule
+    MenuModule,
+    MatSnackBarModule,
   ],
   providers: [
     { provide: NG_ENTITY_SERVICE_CONFIG, useValue: { baseUrl: 'https://jsonplaceholder.typicode.com' } },

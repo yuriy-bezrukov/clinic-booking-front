@@ -1,0 +1,10 @@
+.user-form {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+::ng-deep .mat-form-field {
+  max-width: 120px;
+}

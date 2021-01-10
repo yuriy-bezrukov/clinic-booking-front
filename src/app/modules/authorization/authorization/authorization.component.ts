@@ -14,22 +14,22 @@ import {
 })
 export class AuthorizationComponent implements OnInit {
 
-  preloader$ = new BehaviorSubject(false);
-  onDestroy$ = new Subject();
-
   constructor(
     private formBuilder: FormBuilder,
     private autorizationService: AutorizationService,
     private _snackBar: MatSnackBar
   ) { }
 
-  ngOnInit(): void {
-  }
+  preloader$ = new BehaviorSubject(false);
+  onDestroy$ = new Subject();
 
   loginForm = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]]
   });
+
+  ngOnInit(): void {
+  }
 
   onSubmit() {
     if (!this.loginForm.valid) {

@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ngcc"
+    "postinstall": "ngcc",
+    "api": "cd ../clinic-booking-server && npm run start"
   },
   "private": true,
   "dependencies": {
